@@ -1,5 +1,45 @@
-# advanced-r-practice
-Work repository featuring R program for automation of running code, creation of reports to share results, 
-as well as writing functions and packages. This includes practical excercises, notes,
-and projects based on Advanced R by Matt Wiley &amp; Joshua F.Wiley, with modern R workflows and 
-applications to statistical programming. 
+
+# Advanced R Practice
+
+A working repository for practical exercises, notes, and mini-projects based on *Advanced R* by Matt Wiley and Joshua F. Wiley. This repository focuses on applying R programming concepts in a structured way, with modern tools such as Git, GitHub, and reproducible project workflows.
+
+## Purpose
+
+This repository is used to:
+
+* work through the chapters of *Advanced R* in a practical way,
+* write my own notes and examples,
+* complete programming exercises and mini-projects,
+* connect the book's concepts to modern R and statistical programming,
+* develop professional Git and GitHub workflows using feature branches, commits, pull requests, and version control,
+* build a portfolio demonstrating practical R programming skills.
+
+
+## Repository structure
+
+* `chapters/` — chapter notes, exercises, and solutions
+* `datasets/` — practice data used throughout the book
+* `projects/` — mini-projects and applied examples
+* `modern-practices/` — modern equivalents of older tools and workflows
+* `clinical-programming/` — notes connecting the book to clinical/statistical programming
+* `cheatsheets/` — quick reference notes
+* `references/` — useful links and resources
+* `images/` — screenshots and figures
+
+
+## Development Workflow
+
+This repository follows a feature branch workflow.
+
+* The `main` branch contains stable, completed work.
+* Each chapter or major enhancement is developed in its own feature branch.
+* Changes are committed regularly with meaningful commit messages.
+* Completed work is merged back into `main`.
+
+Example branch names:
+
+* `feature/chapter-02`
+* `feature/chapter-03`
+* `feature/projects`
+* `feature/readme-updates`
+
