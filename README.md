@@ -31,15 +31,36 @@ This repository is used to:
 
 This repository follows a feature branch workflow.
 
-* The `main` branch contains stable, completed work.
-* Each chapter or major enhancement is developed in its own feature branch.
+* The `main` branch contains stable, reviewed work.
+* New work is developed in feature branches.
+* Feature branches are created for individual tasks, such as documentation, exercises, or chapter improvements.
 * Changes are committed regularly with meaningful commit messages.
 * Completed work is merged back into `main`.
 
 Example branch names:
 
-* `feature/chapter-02`
-* `feature/chapter-03`
-* `feature/projects`
-* `feature/readme-updates`
+* `feature/chapter-02-readme`
+* `feature/chapter-02-exercises`
+* `feature/chapter-03-notes`
+* `feature/repository-cleanup`
 
+
+## Learning Progress
+
+| Chapter | Status |
+|---------|--------|
+| Chapter 2 – Programming Utilities | 🚧 In Progress |
+
+
+## Chapters
+
+| Chapter | Folder |
+|---------|--------|
+| Chapter 2 – Programming Utilities | [`chapters/chapter-02-programming-utilities`](chapters/chapter-02-programming-utilities/) |
+
+
+## References
+
+- Wiley, M., & Wiley, J. F. *Advanced R*.
+- R Project for Statistical Computing: https://cran.r-project.org/
+- RStudio IDE: https://posit.co/products/open-source/rstudio/
