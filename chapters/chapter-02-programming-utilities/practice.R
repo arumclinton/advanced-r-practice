@@ -56,3 +56,4 @@ list.files()
 dir.exists('test_folder')
 unlink("test_folder", recursive = TRUE, force=TRUE)
 
+git remote -v
