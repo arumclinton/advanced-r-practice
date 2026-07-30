@@ -1,0 +1,72 @@
+---
+title: "Chapter 2: Programming Utilities"
+format: html
+---
+
+#Overview This Chapter Covers help files, working with the file system, and reading and writing files in R.
+
+## System Files
+
+```{r}
+Sys.Date()
+Sys.time()
+Sys.Date()
+
+```
+
+## Working Directory
+
+```{r}
+getwd()
+list.files()
+
+```
+
+## Checking Files
+
+```{r}
+file.exists('README.Rmd')
+file.exists('no_file.txt')
+
+```
+
+## File Information
+
+```{r}
+file.info('README.Rmd')
+
+```
+
+## Creating and removing files
+
+```{r}
+file.create('test_readme.txt')
+file.remove('test_readme.txt')
+
+```
+
+## Copying and Renaming Files
+
+```{r}
+file.create('source_file.txt')
+file.copy('source_file.txt', 'copy_file.txt', overwrite = TRUE)
+file.rename('copy_file.txt','renamed_file.txt')
+file.remove('source_file.txt', 'renamed_file.txt')
+
+
+```
+
+## Creating Folders
+
+```{r}
+dir.create('test_folder')
+list.files()
+dir.exists('test_folder')
+unlink("test_folder", recursive = TRUE, force=TRUE)
+```
+
+# Reflection
+
+-   Working with quarto and rendering files
+-   Ability to Save notes and to work on r markdown
+-   Ability to create files within the program, and also create
