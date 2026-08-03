@@ -70,3 +70,13 @@ unlink("test_folder", recursive = TRUE, force=TRUE)
 -   Working with quarto and rendering files
 -   Ability to Save notes and to work on r markdown
 -   Ability to create files within the program, and also create
+
+
+## Input and Output
+#Reading files into R vs Writing files and saving console results
+#Creating Output and input folders
+  -Created new folders for SASHELP. ADMIRAL, CDISC, Pharmaverse and practice datasets
+  - Installed admiral and pharmaverse sdtm packages tand download directly from the packages
+  -installed R tools vs 4.4 needed to be able to use admiral package
+  -Downloaded PC, PP, ADSL, EX and DM form pharmaverse
+
