@@ -113,3 +113,17 @@ write_sas(pharmaversesdtm::dm,"datasets/cdisc/dm.sas7bdat")
 write_sas(pharmaversesdtm::ex,"datasets/cdisc/ex.sas7bdat")
 write_sas(pharmaversesdtm::ex,"datasets/cdisc/ex.xpt")
 
+#Creating Readme files in each folder so Githuh can track
+
+getwd()
+file.create("datasets\\stata\\README.md")
+file.create("datasets\\sas\\README.md")
+file.create("datasets\\admiral\\README.md")
+file.create("datasets\\CDISC\\README.md")
+file.create("datasets\\csv\\README.md")
+file.create("datasets\\excel\\README.md")
+file.create("datasets\\pharmaverse\\README.md")
+file.create("datasets\\practice\\README.md")
+file.create("datasets\\sashelp\\README.md")
+file.create("datasets\\spss\\README.md")
+
