@@ -4,7 +4,8 @@ file.create('chapters/chapter-03-programming-automation/README.md')
 #Loops
 getwd()
 install.packages('tidyverse', 'haven', 'purrr', 'readxl', 'openxlsx')
-install.packages('tidyverse')library(purrr)
+install.packages('tidyverse')
+library(purrr)
 library(haven)
 library(tidyverse)
 
@@ -137,6 +138,89 @@ result<-tibble(attempts=attempt,
                sample_mean=mean(y),
                sample_sd=sd(y))
 result
+
+
+#Flow Control
+
+if (mean(y)>6){
+  boxploy(y)
+}
+
+#If else statements
+if (mean(y)>6){
+  boxplot(y)
+} else{
+  hist(y)
+}
+
+
+#Next and Break
+for (d in names(cdisc_datasets)){
+  if(d=='ex'){
+    next
+  }
+  cat("processing: ", d, "\n")
+  print(summary(cdisc_datasets[[d]]))
+}
+
+#Break
+for (d in names(cdisc_datasets)){
+  if(d=='pp'){
+    break
+  }
+  cat("processing: ", d, "\n")
+  print(summary(cdisc_datasets[[d]]))
+}
+
+names(cdisc_datasets)
+
+#apply Family of Functions
+#Apply these functions to these elements
+xL <- 1:5
+lapply(xL, is.integer)
+#Simplify
+sapply(xL, is.integer)
+
+#Expect tghe exact output structure, i.e logical value 
+#Valuable for controlled programming
+vapply(xL, is.integer, FUN.VALUE=NA)
+vapply(xL, mean, FUN.VALUE=NA)
+
+
+#Create a list
+yL<-list(
+  a= 1:5,
+  b= c("6", "7", "8"),
+  c=9:10
+)
+
+#Runs without error when it should
+lapply(yL, summary)
+
+#Defensive Programming
+vapply(yL, summary, c(Min.=0,
+                      '1st Qu.'=0,
+                      Median=0,
+                      Mean=0,
+                      '3rd Qu.'=0,
+                      Max.=0
+                      ) 
+       )
+
+#tapply - Apply by groups
+
+tapply(X=mtcars$mpg,INDEX=mtcars$cyl, FUN=mean)
+#mODERN
+mtcars %>% group_by(cyl) %>% summarise(
+  mean_mpg=mean(mpg),
+  .groups = "drop"
+)
+
+#apply, mapply rapply
+
+
+
+
 ##Best practices
 #Prefer vectorization where appropriate
 #Preallocate objects in loops
