@@ -197,6 +197,7 @@ yL<-list(
 #Runs without error when it should
 lapply(yL, summary)
 
+
 #Defensive Programming
 vapply(yL, summary, c(Min.=0,
                       '1st Qu.'=0,
@@ -216,10 +217,32 @@ mtcars %>% group_by(cyl) %>% summarise(
   .groups = "drop"
 )
 
+#Same as above
+mtcars %>% group_by(cyl) %>% summarise(
+  mean_mpg=mean(mpg)) %>% ungroup()
+
 #apply, mapply rapply
+apply(mtcars, MARGIN=2, FUN=sd)
+apply(mtcars, 2, mean)
 
+#rapply - e.g  travels intro nested structiures and produce means
+#eapply
+environment()
+ls()
+eapply(env=environment(), FUN=class)
 
+#Old vs Modern
+lapply(cdisc_datasets, summary)
+cdisc_datasets %>% purrr::map(summary)
 
+sapply(cdisc_datasets, nrow)
+cdisc_datasets %>% purrr::map_int(nrow)
+cdisc_datasets%>% purrr::map_int(nrow)
+
+#Other modern ways
+cdisc_datasets%>% purrr::map(dim)
+cdisc_datasets%>% purrr::map(names)
+cdisc_datasets$dm%>% names()
 
 ##Best practices
 #Prefer vectorization where appropriate
