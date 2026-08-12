@@ -244,6 +244,14 @@ cdisc_datasets%>% purrr::map(dim)
 cdisc_datasets%>% purrr::map(names)
 cdisc_datasets$dm%>% names()
 
+#Chapter 4 Files
+getwd()
+dir.create("chapters/chapter-04-writing-functions")
+file.create("chapters/chapter-04-writing-functions/README.md",
+            "chapters/chapter-04-writing-functions/notes.qmd",
+            "chapters/chapter-04-writing-functions/practice.R",
+            "chapters/chapter-04-writing-functions/solutions.R")
+
 ##Best practices
 #Prefer vectorization where appropriate
 #Preallocate objects in loops
