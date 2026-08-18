@@ -52,3 +52,47 @@ class(person)<-c("person", "data.frame")
 class(person)
 
 #Create an S3 Method
+print.person<-function(x, ...){
+  cat("Name:", x$name, "\n")
+  cat("Age:", x$age, "\n")
+}
+print(person)
+
+
+
+#Methods() lets you inspect the system
+methods(print)
+methods(plot)
+
+#UseMethod() - the engine behind S3
+#UseMethod tells R - Look at the class of the object and find the appropriate plot.* method
+plot
+plot(person)
+
+#:: vs :::
+#Public Exported Function
+dplyr::filter
+
+#Non exported internal Function
+graphics:::plot.table#Give me the internal  plot.table function from graphics
+
+#Clinical Programming Connection
+
+adsl_info<-list(
+  dataset="ADSL",
+  subjects=120,
+  treatment_groups=c("Placebo", "Treatment")
+)
+class(adsl_info)<-"adsl_info"
+
+#Now we create
+print.adsl_info<-function(x, ...){
+  cat("Dataset:", x$dataset, "\n")
+  cat("Subjects:", x$subjects, "\n")
+  cat("Treatment groups:", paste(x$treatment_groups, collapse = ", ") , "\n")
+}
+
+print(adsl_info)
+methods(print)
+print
+UseMethod("print")
