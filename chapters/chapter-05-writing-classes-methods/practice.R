@@ -96,3 +96,96 @@ print(adsl_info)
 methods(print)
 print
 UseMethod("print")
+
+
+#S4
+#S3 vs S4
+#Unlike S3, S4 formally enforce the object's structure
+
+#Define the Class first
+setClass(
+  Class="textplot",
+  
+  slots = c(
+    x="numeric",
+    y="numeric",
+    labels = "character"
+  ),
+  
+   prototype = list(
+     x=numeric(0),
+     y=numeric(0),
+     labels=character(0)
+   ),
+  
+  validity=function(object){
+    stopifnot(
+      length(object@x)==length(object@y),
+      length(object@x)==length(object@labels)
+    )
+    
+    if(!all(nchar(object@labels)>0, na.rm = TRUE)){
+      stop(
+        "All labels must be missing or non zero length characters"
+      )
+    }
+    return(TRUE)
+  }
+)
+
+#Slot is defined as component of S4 object
+##Give me the x slot for the S4 object - object@x
+
+#Prototype
+##Define initial default structure of an empty object eg empty numeric vector
+
+#Validity
+##Defines additional rules
+
+#Create an object with new()
+dat<-new(
+  "textplot",
+  x=c(1,3,5),
+  y=c(1,2,4),
+  labels=c("First", "Second","Third")
+)
+class(dat)
+dat@x
+dat@y
+dat@labels
+
+dat2<-new(
+  "textplot",
+  x=c(1,3,5),
+  y=c(1,2,4),
+  labels=1:3
+)
+
+
+
+dat3<- new(
+  "textplot",
+  x=c(1,3,5),
+  y=c(1,2,4),
+  labels=c("First", "Second","")
+)
+ 
+
+#Chapter 6 files
+getwd()
+
+chapter_path <-"chapters/chapter-06-writing-a-package"
+dir.create(chapter_path,
+           recursive = TRUE,
+           showWarnings = FALSE)
+
+file.create(
+  file.path(chapter_path, c("README.md",
+               "notes.qmd",
+               "practice.R",
+               "solutions.R"
+              )
+            )
+  )
+
+
