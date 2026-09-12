@@ -547,7 +547,13 @@ strsplit(
 #MatchIt() Function - SKIP THis - TO develop later 
 #Removes unwanted characters, lower casing, optional splitting, calculate string distance, identify exact vs uncertain matches
 
-  
+ #system("git add chapters/chapter-08-data-munging/Practice.R renv.lock")
+#system('git commit -m "Complete Chapter 8 Excercise - Data Munging"')
+#system("git push")
+#system("git status")
 
+#Create Chapter  09 Files
+#Create Chapter 9 Branch
+#system("git switch -c feature/chapter-09-dplyr-data-management")
 
-
+system("git branch --show-current")
